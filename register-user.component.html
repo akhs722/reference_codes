@@ -1,0 +1,96 @@
+<app-common-header-layout></app-common-header-layout>
+<br><br><br>
+<div class="row d-flex justify-content-center">
+
+
+  <div class="col-lg-5" >
+    <form class="form-area " #userRegisterForm ="ngForm" (ngSubmit)="submitRegisterForm(userRegisterForm)" ngNativeValidate>
+      <p style="color: red;">All fields are madnatory.</p>
+      <div class="row">
+        
+        <div class="col-lg-5 form-group">
+          <label for="fname">First Name</label>
+          <input name="fname" placeholder="Enter your first name" title="No special characters" ngModel pattern="[a-zA-Z]+" class="common-input mb-20 form-control" required type="text">
+        </div>
+          <div class="col-lg-5 form-group">  
+          <label for="lname">Last Name</label>
+          <input name="lname" placeholder="Enter your last name" title="No special characters" ngModel pattern="[a-zA-Z]+" class="common-input mb-20 form-control" required type="text">
+        </div>  
+      </div> 
+  
+      <div class="row">
+        <div class="col-lg-5 form-group">
+          <label for="email">Email Id</label>
+          <input name="email" placeholder="Enter your email" class="common-input mb-20 form-control" ngModel required type="email">
+        </div>
+          
+      </div>
+      <div class="row">
+        <div class="col-lg-5 form-group">  
+        <label for="mobno">Mobile Number</label>
+        <input name="mobno" title="Your 10 digit mobile number without 0 or +91"  placeholder="Enter 10 digit mobile number" ngModel pattern="[0-9]{10}" class="common-input mb-20 form-control" required type="text">
+    </div>  
+      </div>
+      <div class="row">
+        <div class="col-lg-5 form-group">
+          <label for="password1">Create Password</label>
+          <input name="password1" placeholder="Enter password" 
+          title = "Password must be between 8-16 characters, One lowercase, one upeercase, one number and one character." ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" class="common-input mb-20 form-control" required type="password">
+        </div>
+          <div class="col-lg-5 form-group">  
+            <label for="password2">Confirm Password</label>
+            <input name="password2" placeholder="Confirm Password" ngModel pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" class="common-input mb-20 form-control" required type="password">
+        </div>  
+      </div>
+      <p>Gender</p>
+      <div class="row"> 
+        
+         <div class="col-lg-5 form-group">
+         
+        <div class="form-check">
+          <input class="form-check-input" type="radio" ngModel name="gender"  value="Female" checked >
+          <label class="form-check-label" for="gender">
+            Female
+          </label>
+        </div>
+  
+      </div>
+      <div class="col-lg-5 form-group">
+        
+      <div class="form-check">
+        <input class="form-check-input" type="radio" ngModel name="gender"  value="Male" >
+        <label class="form-check-label" for="gender">
+          Male
+        </label>
+      </div>
+  
+      </div>  
+    </div>
+    <div class="row">
+      <div class="col-lg-5 form-group">
+        <label for="dob">Date Of Birth</label>
+          <input name="dob" placeholder="Enter your dob" class="common-input mb-20 form-control"  ngModel type="date" max= {{datePipeString}} required>
+          
+      </div>
+       
+    </div>
+    <div class="row">
+      <div class="col-lg-10 form-group">
+        <label for="address">Residential Address</label>
+          <textarea class="common-textarea form-control" name="address" ngModel placeholder="Enter residential address" required></textarea>
+      </div>
+       
+    </div>
+        
+  
+       
+  
+        <div class="row d-flex justify-content-center">
+          <a><button class="btn btn-success">Register</button></a>
+        </div>
+        </form>
+  </div>
+  </div>
+  
+  
+  
